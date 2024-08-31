@@ -16,6 +16,7 @@ class UserSerializer(serializers.ModelSerializer):
         return user
 
 class FriendRequestSerializer(serializers.ModelSerializer):
+    from_user = serializers.HiddenField(default=serializers.CurrentUserDefault())
     class Meta:
         model = FriendRequest
         fields = ['id', 'from_user', 'to_user', 'timestamp', 'is_accepted']

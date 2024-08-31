@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "a662b76f-e10f-49e8-bb88-442e2eb7b332",
+		"name": "social-network",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "12537608"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"password\":\"password\",\r\n\"email\":\"example@gmail.com\",\r\n\"name\":\"Pinklesh Parjapati\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/signup/"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"example@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/login/"
+			},
+			"response": []
+		},
+		{
+			"name": "search friends",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token c8177c16f283d46edc9afc0fac6a03199d65bd1f"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/search/?query=parjapati",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "parjapati"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send friend request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Token c8177c16f283d46edc9afc0fac6a03199d65bd1f"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"to_user\": 5}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/friend-request/",
+				"description": "Generated from cURL: curl -X POST http://127.0.0.1:8000/api/friend-request/ -H \"Content-Type: application/json\" -H \"Authorization: Token your_token_here\" -d '{\"to_user\": 2}'"
+			},
+			"response": []
+		},
+		{
+			"name": "accept/reject friend request",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Token your_token_here"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"is_accepted\": true}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/friend-request/1/",
+				"description": "Generated from cURL: curl -X PUT http://127.0.0.1:8000/api/friend-request/1/ -H \"Content-Type: application/json\" -H \"Authorization: Token your_token_here\" -d '{\"is_accepted\": true}'"
+			},
+			"response": []
+		},
+		{
+			"name": "list friends",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token your_token_here"
+					}
+				],
+				"url": "http://127.0.0.1:8000/api/friends/",
+				"description": "Generated from cURL: curl -X GET http://127.0.0.1:8000/api/friends/ -H \"Authorization: Token your_token_here\""
+			},
+			"response": []
+		},
+		{
+			"name": "pending friend requests",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token your_token_here"
+					}
+				],
+				"url": "http://127.0.0.1:8000/api/pending-requests/",
+				"description": "Generated from cURL: curl -X GET http://127.0.0.1:8000/api/pending-requests/ -H \"Authorization: Token your_token_here\""
+			},
+			"response": []
+		}
+	]
+}
