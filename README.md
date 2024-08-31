@@ -1,5 +1,3 @@
-Certainly! Below is a sample README file that includes detailed installation steps and instructions for setting up and testing the social networking application.
-
 ### README.md
 
 ```markdown
