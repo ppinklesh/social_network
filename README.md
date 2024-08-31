@@ -26,8 +26,8 @@ This is a social networking application built using Django and Django REST Frame
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/social-networking-app.git
-   cd social-networking-app
+   git clone (https://github.com/ppinklesh/social_network.git)
+   cd social-networking
    ```
 
 2. **Create a virtual environment**
