@@ -46,6 +46,7 @@ This is a social networking application built using Django and Django REST Frame
 4. **Apply migrations**
 
    ```bash
+   python manage.py makemigrations
    python manage.py migrate
    ```
 
