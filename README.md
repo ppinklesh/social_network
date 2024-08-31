@@ -1,5 +1,3 @@
-Certainly! Below is a sample README file that includes detailed installation steps and instructions for setting up and testing the social networking application.
-
 ### README.md
 
 ```markdown
@@ -28,8 +26,8 @@ This is a social networking application built using Django and Django REST Frame
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/social-networking-app.git
-   cd social-networking-app
+   git clone (https://github.com/ppinklesh/social_network.git)
+   cd social_networking
    ```
 
 2. **Create a virtual environment**
@@ -48,6 +46,7 @@ This is a social networking application built using Django and Django REST Frame
 4. **Apply migrations**
 
    ```bash
+   python manage.py makemigrations
    python manage.py migrate
    ```
 
@@ -62,6 +61,18 @@ This is a social networking application built using Django and Django REST Frame
    ```bash
    python manage.py runserver
    ```
+7. ** Run Docker Compose for docker setup and buid
+   ```bash
+   # Build the Docker image.
+   # Start the Django development server at http://localhost:8000.
+   docker compose up --build
+
+   # Apply the database migrations
+   docker compose exec web python manage.py makemigrations
+   docker compose exec web python manage.py migrate
+
+   # To access the Django admin panel, create a superuser
+   docker compose exec web python manage.py createsuperuser
 
 ## Usage
 
